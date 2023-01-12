@@ -10,7 +10,9 @@ const Application = () => {
     <div>
       <nav className="w-full h-auto p-5">
         <Navbar/>
-        <RequestURL/>
+        <div className="w-full flex justify-center mt-10">
+          <RequestURL/>
+        </div>
       </nav>
     </div>
   )
