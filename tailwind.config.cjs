@@ -4,20 +4,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        orange: "#F76735",
-        purple: "#A33492",
-        dark: "#1D1D1D",
-        trans: "#00000073",
-        lightDark: "#424242",
-        lightWhite: "#ffffff2b",
-        sWhite: "#ffffff4d",
-        lightOrange: "#e7825f",
-        lightPurple: "#df55ca",
-        redy: "#E53434",
+        pink :"#F52248" , 
+        green : "#D6FF7D" , 
+        red : "#EE2D21" , 
+        green : "#0CA363" , 
+        ddark : "#2D2C2C" , 
+        dddark : "#363636" , 
+        dark : "#202020"
       },
       fontFamily: {},
       backgroundImage: {
-        circle: "url('./src/assets/circle.svg')",
+        
       },
     },
   },
