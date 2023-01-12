@@ -14,7 +14,7 @@ const Navbar = () =>{
             <Link to='/' className="text-white px-2">REPORT SOMETHING</Link>
             <Link to='/' className="text-white px-2">ABOUT</Link>
             </div>
-        
+            
         </nav>
     )
 }

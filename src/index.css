@@ -9,6 +9,7 @@
 }
 *{
     font-family: quick !important;
+    outline:none;
 }
 body{
     background: #202020;
