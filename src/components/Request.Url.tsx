@@ -1,3 +1,6 @@
+import {SendIcon, Down} from './svg'
+
+
 const RequestURL = ({...props}) =>{
     return (
 
