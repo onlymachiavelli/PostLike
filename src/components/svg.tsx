@@ -66,3 +66,27 @@ export const Trash = ({ ...props }) => {
     </svg>
   )
 }
+
+export const Plus = ({ ...props }) => {
+  return (
+    <svg
+      width={props.Width}
+      height={props.Height}
+      viewBox="0 0 7 7"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g clipPath="url(#clip0_2_38)">
+        <path
+          d="M6.5625 3.0625V3.5H3.5V6.5625H3.0625V3.5H0V3.0625H3.0625V0H3.5V3.0625H6.5625Z"
+          fill="white"
+        />
+      </g>
+      <defs>
+        <clipPath id="clip0_2_38">
+          <rect width="7" height="7" fill="white" />
+        </clipPath>
+      </defs>
+    </svg>
+  )
+}
