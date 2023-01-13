@@ -22,3 +22,7 @@ body{
 /*Iam TOPG , That's why i use tailwind css*/
 
 
+table, td, th{
+    border-collapse: collapse;
+    border:5px solid #363636;
+}
