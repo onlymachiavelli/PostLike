@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: quick;
-    src: url("./../public/FONTS/Quicksand-VariableFont_wght.ttf");
+    src: url("/FONTS/Quicksand-VariableFont_wght.ttf");
 }
 *{
     font-family: quick !important;
