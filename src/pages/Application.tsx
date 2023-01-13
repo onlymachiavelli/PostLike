@@ -17,7 +17,7 @@ const Application = () => {
       </nav>
 
       <div className="w-full h-5/6 flex align-center justify-center mt-20 gap-x-2">
-        <aside className="w-1/3 bg-dddark h-3/4 rounded-sm ">
+        <aside className="w-5/12 bg-dddark h-3/4 rounded-sm ">
           <div className="w-full h-auto p-3 bg-ddark rounded-sm overflow-hidden mb-2">
             <div className="flex w-full h-auto  align-center  justify-between">
               <p className="text-white font-bold">REQUEST QUERY</p>
@@ -40,7 +40,7 @@ const Application = () => {
             <DataColumn />
           </table>
         </aside>
-        <aside className="w-3/5 bg-dddark h-3/4 rounded-sm overflow-hidden">
+        <aside className="w-1/2 bg-dddark h-3/4 rounded-sm overflow-hidden">
           <div className="w-full h-auto p-3 bg-ddark rounded-sm overflow-hidden">
             <div className="flex w-full h-auto  align-center  justify-between">
               <p className="text-white font-bold">RESPONSE BOX</p>
