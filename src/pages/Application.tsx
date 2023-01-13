@@ -5,6 +5,7 @@ import { Logo } from "../components/Logo"
 import Navbar from "../components/navbar"
 
 import RequestURL from "../components/Request.Url"
+import DataColumn from "../components/data.column"
 const Application = () => {
   return (
     <div className="w-full h-screen overflow-hidden">
@@ -37,6 +38,8 @@ const Application = () => {
                 DEL
               </td>
             </tr>
+            <DataColumn />
+            <DataColumn />
           </table>
         </aside>
         <aside className="w-3/5 bg-dddark h-3/4 rounded-sm overflow-hidden">
