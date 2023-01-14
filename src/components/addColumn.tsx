@@ -6,5 +6,7 @@ const Fields = () => {
   const addField = () => {
     setFields([...fields, <DataColumn />])
   }
+
+  return { fields, addField }
 }
 export default Fields

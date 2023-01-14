@@ -1,12 +1,13 @@
 import React from "react"
 import { Plus } from "./../components/svg"
-
+import Fields from "../components/addColumn"
 import { Logo } from "../components/Logo"
 import Navbar from "../components/navbar"
 
 import RequestURL from "../components/Request.Url"
 import DataColumn from "../components/data.column"
 const Application = () => {
+  const { fields, addField } = Fields()
   return (
     <div className="w-full h-screen overflow-hidden">
       <nav className="w-full p-5 h-auto">
@@ -36,12 +37,19 @@ const Application = () => {
                 DEL
               </td>
             </tr>
-            <DataColumn />
-            <DataColumn />
-            <DataColumn />
-            <DataColumn />
+            {
+              //map the fields
+              fields.map((field: any, index: any) => {
+                return field
+              })
+            }
           </table>
-          <button className="w-auto h-auto bg-pink rounded-full px-2 py-2 block  m-auto mt-4">
+          <button
+            className="w-auto h-auto bg-pink rounded-full px-2 py-2 block  m-auto mt-4"
+            onClick={() => {
+              addField()
+            }}
+          >
             <Plus Width="15" Height="15" />
           </button>
         </aside>
