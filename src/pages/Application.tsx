@@ -6,10 +6,12 @@ import Navbar from "../components/navbar"
 import ReqUrl from "../AXIOS/pb.hook"
 import RequestURL from "../components/Request.Url"
 import DataColumn from "../components/data.column"
+import colorFormat from "../AXIOS/color.format"
 import publicGet from "../AXIOS/axios.get"
 const Application = ({...props}) => {
   const { fields, addField, Clear } = Fields()
   const {target, Response, setTarget, setRes} = ReqUrl()
+  const {} = colorFormat
   const {sendReq} = publicGet()
   return (
     <div className="w-full h-screen overflow-hidden">

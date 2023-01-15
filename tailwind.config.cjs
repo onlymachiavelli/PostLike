@@ -11,6 +11,7 @@ module.exports = {
         ddark : "#2D2C2C" , 
         dddark : "#363636" , 
         dark : "#202020", 
+        brown : "#EE8321"
       },
       fontFamily: {},
       backgroundImage: {

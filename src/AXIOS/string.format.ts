@@ -23,4 +23,7 @@ const jsonFormat = (data : any) =>{
     return myString
 }
 
+
+
+
 export default jsonFormat
