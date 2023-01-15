@@ -92,7 +92,7 @@ const Application = ({...props}) => {
               </p>
             </div>
           </div>
-          <textarea  disabled placeholder="THE RESPONSE AREA"  className="resize-none w-full h-4/5 bg-transparent p-3  text-green" defaultValue={Response} >
+          <textarea  disabled placeholder="THE RESPONSE AREA"  className="resize-none w-full h-4/5 bg-transparent p-3  text-green" defaultValue={clr} >
           </textarea>
         </aside>
       </div>
