@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect, useState} from "react"
 import { Plus } from "./../components/svg"
 import Fields from "../components/addColumn"
 import { Logo } from "../components/Logo"
@@ -6,7 +6,7 @@ import Navbar from "../components/navbar"
 import ReqUrl from "../AXIOS/pb.hook"
 import RequestURL from "../components/Request.Url"
 import DataColumn from "../components/data.column"
-const Application = () => {
+const Application = ({...props}) => {
   const { fields, addField, Clear } = Fields()
   const {target, Response, setTarget, setRes} = ReqUrl()
   return (
@@ -14,10 +14,23 @@ const Application = () => {
       <nav className="w-full p-5 h-auto">
         <Navbar />
         <div className="w-full flex justify-center mt-10">
-          <RequestURL />
+          <RequestURL Value={target} onFunc={
+            //onchanging 
+            (e:any) =>{
+              setTarget(e.target.value)
+            }
+
+            } 
+            onSend= {
+              () =>{
+                
+              }
+            }
+
+            cMethod={()=>{}}
+          />
         </div>
       </nav>
-
       <div className="w-full h-5/6 flex align-center justify-center mt-20 gap-x-2">
         <aside className="w-5/12 bg-dddark h-3/4 rounded-sm overflow-y-scroll pb-5">
           <div className="w-full h-auto p-3 bg-ddark rounded-sm overflow-hidden mb-2">
@@ -27,6 +40,7 @@ const Application = () => {
             </div>
           </div>
           <table className="w-11/12 m-auto border-collapse border-dddark">
+            <tbody>
             <tr>
               <td className="text-white bg-ddark p-3 text-center w-1/3 text-sm">
                 REQUEST PARAMS
@@ -50,6 +64,7 @@ const Application = () => {
                 return field
               })
             }
+            </tbody>
           </table>
           <button
             className="w-auto h-auto bg-pink rounded-full px-2 py-2 block  m-auto mt-4"
@@ -65,14 +80,11 @@ const Application = () => {
             <div className="flex w-full h-auto  align-center  justify-between">
               <p className="text-white font-bold">RESPONSE BOX</p>
               <p className="text-pink text-sm pt-0.5 flex">
-                STATUS :&nbsp;<p className="text-green"> 200 (OK)</p>
+                STATUS :&nbsp;<b className="text-green"> 200 (OK)</b>
               </p>
             </div>
           </div>
-
-
-
-          <textarea value={Response} disabled placeholder="THE RESPONSE AREA"  className="resize-none w-full h-auto bg-transparent p-3 text-green"  ></textarea>
+          <textarea  disabled placeholder="THE RESPONSE AREA"  className="resize-none w-full h-auto bg-transparent p-3 text-green" defaultValue={Response} ></textarea>
         </aside>
       </div>
     </div>
