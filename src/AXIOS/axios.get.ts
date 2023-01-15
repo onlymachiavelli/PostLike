@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
-
+import jsonFormat from './string.format'
 const  publicGet =( ) =>{
     
 
@@ -15,7 +15,7 @@ const  publicGet =( ) =>{
             //withCredentials: true,
         }).then(res =>{
             
-            dyn_container(JSON.stringify(res.data))
+            dyn_container(jsonFormat(JSON.stringify(res.data)))
             console.log(res.data);
             
         })

@@ -7,13 +7,13 @@ const jsonFormat = (data : any) =>{
     let myString : any  = "" 
     for (let i = 0; i< data.length; i++){
         if (data[i] === '{'){
-            myString += '{\n'
+            myString += '{\n    '
         }
         else if (data[i] === '}'){
             myString += '\n}\n'
         }
         else if (data[i] === ','){
-            myString += ',\n'
+            myString += ',\n    '
         }
         else{
             myString += data[i]
