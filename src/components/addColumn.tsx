@@ -8,13 +8,14 @@ const Fields = () => {
     const newFields = fields.filter((field: any, index: any) => {
       return index !== id
     })
+
     setFields(newFields)
   }
 
   const addField = () => {
     setFields([
       ...fields,
-      <DataColumn onDel={() => DeleteField(fields.length)} />,
+      <DataColumn onDel={() => DeleteField(fields.length++)} />,
     ])
   }
 
