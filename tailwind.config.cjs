@@ -10,7 +10,7 @@ module.exports = {
         green : "#0CA363" , 
         ddark : "#2D2C2C" , 
         dddark : "#363636" , 
-        dark : "#202020"
+        dark : "#202020", 
       },
       fontFamily: {},
       backgroundImage: {

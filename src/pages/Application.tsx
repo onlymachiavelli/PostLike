@@ -3,11 +3,12 @@ import { Plus } from "./../components/svg"
 import Fields from "../components/addColumn"
 import { Logo } from "../components/Logo"
 import Navbar from "../components/navbar"
-
+import ReqUrl from "../AXIOS/pb.hook"
 import RequestURL from "../components/Request.Url"
 import DataColumn from "../components/data.column"
 const Application = () => {
   const { fields, addField, Clear } = Fields()
+  const {target, Response, setTarget, setRes} = ReqUrl()
   return (
     <div className="w-full h-screen overflow-hidden">
       <nav className="w-full p-5 h-auto">
@@ -68,6 +69,10 @@ const Application = () => {
               </p>
             </div>
           </div>
+
+
+
+          <textarea value={Response} disabled placeholder="THE RESPONSE AREA"  className="resize-none w-full h-auto bg-transparent p-3 text-green"  ></textarea>
         </aside>
       </div>
     </div>

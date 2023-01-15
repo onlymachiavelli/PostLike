@@ -15,7 +15,7 @@ const ReqUrl = () => {
   const [Response, setRes] = useState()
 
 
-
+  
   return {Response , target , setTarget, setRes}
 }
 
