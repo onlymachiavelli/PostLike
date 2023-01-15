@@ -10,15 +10,10 @@ const DataFields = () => {
   return { prms, Decompose }
 }
 const ReqUrl = () => {
+  const [target, setTarget]: any = useState(String)
+  const [Response, setRes]: any = useState()
 
-  const [target, setTarget] = useState(String)
-  const [Response, setRes] = useState()
-
-
-  
-  return {Response , target , setTarget, setRes}
+  return { Response, target, setTarget, setRes }
 }
-
-
 
 export default ReqUrl

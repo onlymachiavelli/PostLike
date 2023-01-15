@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react"
+import React, { useEffect, useState } from "react"
 import { Plus } from "./../components/svg"
 import Fields from "../components/addColumn"
 import { Logo } from "../components/Logo"
@@ -8,34 +8,34 @@ import RequestURL from "../components/Request.Url"
 import DataColumn from "../components/data.column"
 import Format from "../AXIOS/color.format"
 import publicGet from "../AXIOS/axios.get"
-const Application = ({...props}) => {
+import parse from "html-react-parser"
+const Application = ({ ...props }) => {
   const { fields, addField, Clear } = Fields()
-  const {target, Response, setTarget, setRes} = ReqUrl()
-  const { clr, setColor ,colorFormat } = Format()
-  const {sendReq} = publicGet()
+  const { target, Response, setTarget, setRes } = ReqUrl()
+  const { clr, setColor, colorFormat } = Format()
+  const { sendReq } = publicGet()
   return (
     <div className="w-full h-screen overflow-hidden">
       <nav className="w-full p-5 h-auto">
         <Navbar />
         <div className="w-full flex justify-center mt-10">
-          <RequestURL Value={target} onFunc={
-            //onchanging 
-            (e:any) =>{
-              setTarget(e.target.value)
-            }
-
-            } 
-            onSend= {
-              () =>{
-                sendReq( setRes, target)
-                if (Response) colorFormat(Response)
-                
-                setRes(clr)
-                console.log(clr)
+          <RequestURL
+            Value={target}
+            onFunc={
+              //onchanging
+              (e: any) => {
+                setTarget(e.target.value)
               }
             }
+            onSend={() => {
+              sendReq(setRes, target)
+              if (Response) colorFormat(Response)
 
-            cMethod={()=>{}}
+              //setRes(clr)
+              console.log(clr)
+              setRes(parse(clr))
+            }}
+            cMethod={() => {}}
           />
         </div>
       </nav>
@@ -49,29 +49,30 @@ const Application = ({...props}) => {
           </div>
           <table className="w-11/12 m-auto border-collapse border-dddark">
             <tbody>
-            <tr>
-              <td className="text-white bg-ddark p-3 text-center w-1/3 text-sm">
-                REQUEST PARAMS
-              </td>
-              <td className="text-white bg-ddark p-3 text-center text-sm">
-                VALUE
-              </td>
-              <td className="text-white bg-pink p-3 text-center text-sm">
-                
-
-                <button className="font-bold" onClick={()=>{
-                  Clear()
-                }}>
-                  CLEAR
-                </button>
-              </td>
-            </tr>
-            {
-              //map the fields
-              fields.map((field: any, index: any) => {
-                return field
-              })
-            }
+              <tr>
+                <td className="text-white bg-ddark p-3 text-center w-1/3 text-sm">
+                  REQUEST PARAMS
+                </td>
+                <td className="text-white bg-ddark p-3 text-center text-sm">
+                  VALUE
+                </td>
+                <td className="text-white bg-pink p-3 text-center text-sm">
+                  <button
+                    className="font-bold"
+                    onClick={() => {
+                      Clear()
+                    }}
+                  >
+                    CLEAR
+                  </button>
+                </td>
+              </tr>
+              {
+                //map the fields
+                fields.map((field: any, index: any) => {
+                  return field
+                })
+              }
             </tbody>
           </table>
           <button
@@ -92,8 +93,12 @@ const Application = ({...props}) => {
               </p>
             </div>
           </div>
-          <textarea  disabled placeholder="THE RESPONSE AREA"  className="resize-none w-full h-4/5 bg-transparent p-3  text-green" defaultValue={clr} >
-          </textarea>
+          <div
+            className="resize-none w-full h-4/5 bg-transparent p-3  text-green overflow-y-scroll"
+            defaultValue={clr}
+          >
+            {parse(clr)}
+          </div>
         </aside>
       </div>
     </div>
