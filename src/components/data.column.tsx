@@ -23,7 +23,7 @@ const DataColumn = ({ ...props }) => {
         />
       </td>
       <td className="text-white bg-pink p-3 text-center text-sm">
-        <button>
+        <button onClick={props.onDel}>
           <Trash Width="20" Height="20" />
         </button>
       </td>
