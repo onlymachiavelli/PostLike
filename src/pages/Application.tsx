@@ -7,7 +7,7 @@ import Navbar from "../components/navbar"
 import RequestURL from "../components/Request.Url"
 import DataColumn from "../components/data.column"
 const Application = () => {
-  const { fields, addField } = Fields()
+  const { fields, addField, Clear } = Fields()
   return (
     <div className="w-full h-screen overflow-hidden">
       <nav className="w-full p-5 h-auto">
@@ -34,7 +34,13 @@ const Application = () => {
                 VALUE
               </td>
               <td className="text-white bg-pink p-3 text-center text-sm">
-                DEL
+                
+
+                <button className="font-bold" onClick={()=>{
+                  Clear()
+                }}>
+                  CLEAR
+                </button>
               </td>
             </tr>
             {

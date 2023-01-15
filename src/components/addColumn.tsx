@@ -18,6 +18,10 @@ const Fields = () => {
     ])
   }
 
-  return { fields, addField }
+  const Clear = () =>{
+    setFields([])
+  }
+ 
+  return { fields, addField ,Clear }
 }
 export default Fields

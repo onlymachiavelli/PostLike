@@ -9,5 +9,16 @@ const DataFields = () => {
   const Decompose = () => {}
   return { prms, Decompose }
 }
+const ReqUrl = () => {
 
-export default DataFields
+  const [target, setTarget] = useState(String)
+  const [Response, setRes] = useState()
+
+
+
+  return {Response , target , setTarget, setRes}
+}
+
+
+
+export default ReqUrl
