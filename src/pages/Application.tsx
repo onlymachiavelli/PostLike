@@ -6,12 +6,12 @@ import Navbar from "../components/navbar"
 import ReqUrl from "../AXIOS/pb.hook"
 import RequestURL from "../components/Request.Url"
 import DataColumn from "../components/data.column"
-import colorFormat from "../AXIOS/color.format"
+import Format from "../AXIOS/color.format"
 import publicGet from "../AXIOS/axios.get"
 const Application = ({...props}) => {
   const { fields, addField, Clear } = Fields()
   const {target, Response, setTarget, setRes} = ReqUrl()
-  const {} = colorFormat
+  const { clr, setColor ,colorFormat } = Format()
   const {sendReq} = publicGet()
   return (
     <div className="w-full h-screen overflow-hidden">
@@ -28,6 +28,10 @@ const Application = ({...props}) => {
             onSend= {
               () =>{
                 sendReq( setRes, target)
+                if (Response) colorFormat(Response)
+                
+                setRes(clr)
+                console.log(clr)
               }
             }
 
@@ -88,7 +92,8 @@ const Application = ({...props}) => {
               </p>
             </div>
           </div>
-          <textarea  disabled placeholder="THE RESPONSE AREA"  className="resize-none w-full h-4/5 bg-transparent p-3  text-green" defaultValue={Response} ></textarea>
+          <textarea  disabled placeholder="THE RESPONSE AREA"  className="resize-none w-full h-4/5 bg-transparent p-3  text-green" defaultValue={Response} >
+          </textarea>
         </aside>
       </div>
     </div>
