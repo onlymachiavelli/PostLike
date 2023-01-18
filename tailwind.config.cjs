@@ -4,19 +4,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        pink :"#F52248" , 
-        green : "#D6FF7D" , 
-        red : "#EE2D21" , 
-        green : "#0CA363" , 
-        ddark : "#2D2C2C" , 
-        dddark : "#363636" , 
-        dark : "#202020", 
-        brown : "#EE8321"
+        pink: "#F52248",
+        grn: "#D6FF7D",
+        red: "#EE2D21",
+        green: "#0CA363",
+        ddark: "#2D2C2C",
+        dddark: "#363636",
+        dark: "#202020",
+        brown: "#EE8321",
       },
       fontFamily: {},
-      backgroundImage: {
-        
-      },
+      backgroundImage: {},
     },
   },
   plugins: [],
