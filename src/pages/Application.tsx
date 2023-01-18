@@ -9,6 +9,7 @@ import DataColumn from "../components/data.column"
 import Format from "../AXIOS/color.format"
 import publicGet from "../AXIOS/axios.get"
 import parse from "html-react-parser"
+import PopUp from "../components/popup"
 const Application = ({ ...props }) => {
   const { fields, addField, Clear } = Fields()
   const { target, Response, setTarget, setRes } = ReqUrl()
@@ -101,6 +102,8 @@ const Application = ({ ...props }) => {
           </div>
         </aside>
       </div>
+
+      <PopUp Visible={""} />
     </div>
   )
 }
