@@ -1,4 +1,20 @@
-import React from "react"
+import React, {useState, useEffect} from "react"
+
+
+
+export const useSetMethod = () =>{
+  
+  //get by default
+  const [method, setM] = useState("GET")
+  const setMethod = (e:any) =>{
+    setM(e.target.innerText)
+  }
+
+
+
+
+  return {method, setMethod, setM}
+}
 
 const PopUp = ({ ...props }) => {
   return (
