@@ -8,7 +8,6 @@ import RequestURL from "../components/Request.Url"
 import DataColumn from "../components/data.column"
 import Format from "../AXIOS/color.format"
 import publicGet from "../AXIOS/axios.get"
-import parse from "html-react-parser"
 import PopUp from "../components/popup"
 const Application = ({ ...props }) => {
   const { fields, addField, Clear } = Fields()
@@ -34,7 +33,6 @@ const Application = ({ ...props }) => {
 
               //setRes(clr)
               console.log(clr)
-              setRes(parse(clr))
             }}
             cMethod={() => {}}
           />
@@ -98,7 +96,6 @@ const Application = ({ ...props }) => {
             className="resize-none w-full h-4/5 bg-transparent p-3  text-green overflow-y-scroll"
             defaultValue={clr}
           >
-            {parse(clr)}
           </div>
         </aside>
       </div>
