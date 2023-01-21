@@ -14,6 +14,12 @@ const Application = ({ ...props }) => {
   const { target, Response, setTarget, setRes } = ReqUrl()
   const { clr, setColor, colorFormat } = Format()
   const { sendReq } = publicGet()
+
+  //request url code (methods and visiblity) 
+
+  const [Visibility, setVisibility] = useState("invisible")
+  const [Method, setMethod] = useState("")
+
   return (
     <div className="w-full h-screen overflow-hidden">
       <nav className="w-full p-5 h-auto">
@@ -34,7 +40,9 @@ const Application = ({ ...props }) => {
               //setRes(clr)
               console.log(clr)
             }}
-            cMethod={() => {}}
+            cMethod={() => {
+              setVisibility("visible")
+            }}
           />
         </div>
       </nav>
@@ -100,7 +108,9 @@ const Application = ({ ...props }) => {
         </aside>
       </div>
 
-      <PopUp Visible={""} />
+      <PopUp Visibile={Visibility} Hide={()=>{
+        setVisibility("invisible")
+      }}  />
     </div>
   )
 }
