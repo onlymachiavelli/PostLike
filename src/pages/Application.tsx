@@ -9,13 +9,14 @@ import DataColumn from "../components/data.column"
 import Format from "../AXIOS/color.format"
 import publicGet from "../AXIOS/axios.get"
 import PopUp from "../components/popup"
+import parse from "html-react-parser"
 const Application = ({ ...props }) => {
   const { fields, addField, Clear } = Fields()
   const { target, Response, setTarget, setRes } = ReqUrl()
   const { clr, setColor, colorFormat } = Format()
   const { sendReq } = publicGet()
 
-  //request url code (methods and visiblity) 
+  //request url code (methods and visiblity)
 
   const [Visibility, setVisibility] = useState("invisible")
   const [Method, setMethod] = useState("")
@@ -102,15 +103,19 @@ const Application = ({ ...props }) => {
           </div>
           <div
             className="resize-none w-full h-4/5 bg-transparent p-3  text-green overflow-y-scroll"
-            defaultValue={clr}
+            //defaultValue={clr}
           >
+            {parse(clr)}
           </div>
         </aside>
       </div>
 
-      <PopUp Visibile={Visibility} Hide={()=>{
-        setVisibility("invisible")
-      }}  />
+      <PopUp
+        Visibile={Visibility}
+        Hide={() => {
+          setVisibility("invisible")
+        }}
+      />
     </div>
   )
 }

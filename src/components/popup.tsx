@@ -9,7 +9,7 @@ const PopUp = ({ ...props }) => {
           <button
             onClick={()=>{
               {
-                props.onGet
+                //props.onGet
                 props.Hide()
               }
             }}
@@ -22,7 +22,7 @@ const PopUp = ({ ...props }) => {
           <button
             onClick={()=>{
               {
-                props.onPost
+                //props.onPost
                 props.Hide()
               }
             }}
@@ -34,7 +34,7 @@ const PopUp = ({ ...props }) => {
           <button
             onClick={()=>{
               {
-                props.onDelete
+                //props.onDelete
                 props.Hide()
               }
 
@@ -49,7 +49,7 @@ const PopUp = ({ ...props }) => {
           <button
             onClick={()=>{
               {
-                props.onPut
+                //props.onPut
                 props.Hide()
 
               }
@@ -63,7 +63,7 @@ const PopUp = ({ ...props }) => {
           <button
             onClick={()=>{
               {
-                props.onPatch
+                //props.onPatch
                 props.Hide()
               }
             }}
