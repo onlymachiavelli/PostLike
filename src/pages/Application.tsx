@@ -116,8 +116,20 @@ const Application = ({ ...props }) => {
         Hide={() => {
           setVisibility("invisible")
         }}
-        onFunc={(e: any) => {
-          setMethod(e.target.value)
+        onGet={() => {
+          setMethod("GET")
+        }}
+        onPost={() => {
+          setMethod("POST")
+        }}
+        onPut={() => {
+          setMethod("PUT")
+        }}
+        onDelete={() => {
+          setMethod("DELETE")
+        }}
+        onPatch={() => {
+          setMethod("PATCH")
         }}
       />
 
