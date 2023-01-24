@@ -10,6 +10,7 @@ import Format from "../AXIOS/color.format"
 import publicGet from "../AXIOS/axios.get"
 import PopUp from "../components/popup"
 import parse from "html-react-parser"
+import { toast, Toaster } from "react-hot-toast"
 const Application = ({ ...props }) => {
   const { fields, addField, Clear } = Fields()
   const { target, Response, setTarget, setRes } = ReqUrl()
@@ -19,8 +20,7 @@ const Application = ({ ...props }) => {
   //request url code (methods and visiblity)
 
   const [Visibility, setVisibility] = useState("invisible")
-  const [Method, setMethod] = useState("")
-
+  const [Method, setMethod] = useState(String)
   return (
     <div className="w-full h-screen overflow-hidden">
       <nav className="w-full p-5 h-auto">
@@ -35,11 +35,15 @@ const Application = ({ ...props }) => {
               }
             }
             onSend={() => {
-              sendReq(setRes, target)
-              if (Response) colorFormat(Response)
+              if (Method.length === 0) {
+                toast.error("Please select a method")
+              } else {
+                sendReq(setRes, target)
+                if (Response) colorFormat(Response)
 
-              //setRes(clr)
-              console.log(clr)
+                //setRes(clr)
+                console.log(clr)
+              }
             }}
             cMethod={() => {
               setVisibility("visible")
@@ -101,10 +105,7 @@ const Application = ({ ...props }) => {
               </p>
             </div>
           </div>
-          <div
-            className="resize-none w-full h-4/5 bg-transparent p-3  text-green overflow-y-scroll"
-            //defaultValue={clr}
-          >
+          <div className="resize-none w-full h-4/5 bg-transparent p-3  text-green overflow-y-scroll">
             {parse(clr)}
           </div>
         </aside>
@@ -115,7 +116,12 @@ const Application = ({ ...props }) => {
         Hide={() => {
           setVisibility("invisible")
         }}
+        onFunc={(e: any) => {
+          setMethod(e.target.value)
+        }}
       />
+
+      <Toaster position="top-right" reverseOrder={false} />
     </div>
   )
 }
