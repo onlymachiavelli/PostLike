@@ -7,7 +7,8 @@ const publicGet = () => {
     dyn_container: any,
     target: any,
     method: any,
-    setStatus: any
+    setStatus: any,
+    setDes: any
   ) => {
     axios
       .get(target, {
@@ -19,6 +20,7 @@ const publicGet = () => {
         dyn_container(jsonFormat(JSON.stringify(res.data)))
         console.log(res.data)
         setStatus(res.status)
+        setDes(res.statusText)
       })
       .catch((err) => {
         console.log(err)
@@ -30,3 +32,6 @@ const publicGet = () => {
 }
 
 export default publicGet
+
+//fake api url
+//https://jsonplaceholder.typicode.com/todos/1
