@@ -21,6 +21,7 @@ const Application = ({ ...props }) => {
 
   const [Visibility, setVisibility] = useState("invisible")
   const [Method, setMethod] = useState(String)
+
   return (
     <div className="w-full h-screen overflow-hidden">
       <nav className="w-full p-5 h-auto">
@@ -42,8 +43,9 @@ const Application = ({ ...props }) => {
                 if (Response) colorFormat(Response)
 
                 //setRes(clr)
-                console.log(clr)
+                //console.log(clr)
               }
+              //console.log(Method)
             }}
             cMethod={() => {
               setVisibility("visible")
@@ -56,7 +58,9 @@ const Application = ({ ...props }) => {
           <div className="w-full h-auto p-3 bg-ddark rounded-sm overflow-hidden mb-2">
             <div className="flex w-full h-auto  align-center  justify-between">
               <p className="text-white font-bold "> REQUEST QUERY </p>
-              <p className="text-white text-sm pt-0.5">Method : GET</p>
+              <p className="text-white text-sm pt-0.5">
+                Method : <b className={`text-pink`}>{Method.toUpperCase()}</b>
+              </p>
             </div>
           </div>
           <table className="w-11/12 m-auto border-collapse border-dddark">
