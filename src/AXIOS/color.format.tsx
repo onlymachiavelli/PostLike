@@ -52,6 +52,7 @@ const Format = () => {
         //setColor([...clr, <p className="text-white">{myString[i]}</p>])
         color += `<b className="text-white">${myString[i]}</b>`
       }
+
       //else if ()
 
       setColor(color)
