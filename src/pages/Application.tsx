@@ -92,7 +92,7 @@ const Application = ({ ...props }) => {
             </tbody>
           </table>
           <button
-            className="w-auto h-auto bg-pink rounded-full px-2 py-2 block  m-auto mt-4"
+            className="w-auto h-auto bg-pink rounded-full px-2 py-2 block  m-auto mt-4 shadow-sm"
             onClick={() => {
               addField()
             }}
@@ -122,18 +122,23 @@ const Application = ({ ...props }) => {
         }}
         onGet={() => {
           setMethod("GET")
+          toast.success("GET method selected")
         }}
         onPost={() => {
           setMethod("POST")
+          toast.success("POST method selected")
         }}
         onPut={() => {
           setMethod("PUT")
+          toast.success("PUT method selected")
         }}
         onDelete={() => {
           setMethod("DELETE")
+          toast.success("DELETE method selected")
         }}
         onPatch={() => {
           setMethod("PATCH")
+          toast.success("PATCH method selected")
         }}
       />
 
