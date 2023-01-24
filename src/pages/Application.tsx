@@ -16,11 +16,9 @@ const Application = ({ ...props }) => {
   const { target, Response, setTarget, setRes } = ReqUrl()
   const { clr, setColor, colorFormat } = Format()
   const { sendReq } = publicGet()
-
-  //request url code (methods and visiblity)
-
   const [Visibility, setVisibility] = useState("invisible")
   const [Method, setMethod] = useState(String)
+  const [Status, setStatus] = useState(String)
 
   return (
     <div className="w-full h-screen overflow-hidden">
@@ -29,23 +27,21 @@ const Application = ({ ...props }) => {
         <div className="w-full flex justify-center mt-10">
           <RequestURL
             Value={target}
-            onFunc={
-              //onchanging
-              (e: any) => {
-                setTarget(e.target.value)
-              }
-            }
+            onFunc={(e: any) => {
+              setTarget(e.target.value)
+            }}
             onSend={() => {
               if (Method.length === 0) {
                 toast.error("Please select a method")
+              } else if (target.length === 0) {
+                toast.error("Please enter a valid url")
               } else {
-                sendReq(setRes, target)
+                sendReq(setRes, target, Method, setStatus)
                 if (Response) colorFormat(Response)
-
-                //setRes(clr)
-                //console.log(clr)
+                toast.success(
+                  "Request Sent, if the box is empty please click again"
+                )
               }
-              //console.log(Method)
             }}
             cMethod={() => {
               setVisibility("visible")
@@ -105,7 +101,7 @@ const Application = ({ ...props }) => {
             <div className="flex w-full h-auto  align-center  justify-between">
               <p className="text-white font-bold">RESPONSE BOX</p>
               <p className="text-pink text-sm pt-0.5 flex">
-                STATUS :&nbsp;<b className="text-green"> 200 (OK)</b>
+                STATUS :&nbsp;<b className="text-green"> {Status} (OK)</b>
               </p>
             </div>
           </div>
