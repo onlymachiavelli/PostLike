@@ -127,46 +127,265 @@
         "308" : "Permanent Redirect"
         
     },
-    {"400": "Bad Request"},
-    {"401": "Unauthorized"},
-    {"402": "Payment Required"},
-    {"403": "Forbidden"},
-    {"404": "Not Found"},
-    {"405": "Method Not Allowed"},
-    {"406": "Not Acceptable"},
-    {"407": "Proxy Authentication Required"},
-    {"408": "Request Timeout"},
-    {"409": "Conflict"},
-    {"410" : "Gone"} , 
-    {"411" : "Length Required"} ,
-    {"412" : "Precondition Failed"} ,
-    {"413" : "Payload Too Large"} ,
-    {"414" : "URI Too Long"} ,
-    {"415" : "Unsupported Media Type"} ,
-    {"416" : "Range Not Satisfiable"} ,
-    {"417" : "Expectation Failed" },
-    {"418" : "I'm a teapot"} ,
-    {"421" : "Misdirected Request"} ,
-    {"422"   : "Unprocessable Entity"} ,
-    {"423"   : "Locked" },
-    {"424"   : "Failed Dependency"} ,
-    {"425"   : "Too Early"} ,
-    {"426"   : "Upgrade Required"} ,
-    {"428"   : "Precondition Required"} ,
-    {"429"   : "Too Many Requests"} ,
-    {"431"   : "Request Header Fields Too Large"} ,
-    {"451"   : "Unavailable For Legal Reasons"} ,
-    {"500" : "Internal Server Error" },
-    {"501" : "Not Implemented"} ,
-    {"502" : "Bad Gateway"} ,
-    {"503" : "Service Unavailable"} ,
-    {"504" : "Gateway Timeout"} ,
-    {"505" : "HTTP Version Not Supported" },
-    {"506" : "Variant Also Negotiates" },
-    {"507" : "Insufficient Storage" },
-    {"508" : "Loop Detected"} ,
-    {"510" : "Not Extended" },
-    {"511" : "Network Authentication Required"}
+    {
+        "400": "Bad Request",
+        "status" : 400 ,
+        "desc" : "Bad Request"
+
+    },
+    {
+        "401": "Unauthorized",
+        "status" : 401 ,
+        "desc" : "Unauthorized"
+
+    },
+    {
+        "402": "Payment Required",
+        "status" : 402 ,
+        "desc" : "Payment Required"
+
+
+    },
+    {
+        "403": "Forbidden",
+        "status" : 403 ,
+        "desc" : "Forbidden"
+
+    },
+    {
+        "404": "Not Found",
+        "status" : 404 ,
+        "desc" : "Not Found"
+
+    },
+    {
+        "405": "Method Not Allowed",
+        "status" : 405 ,
+        "desc" : "Method Not Allowed"
+
+        
+    },
+    {
+        "406": "Not Acceptable",
+        "status" : 406 ,
+        "desc" : "Not Acceptable"
+    },
+    {
+        "407": "Proxy Authentication Required", 
+        "status" : 407 ,
+        "desc" : "Proxy Authentication Required"
+    },
+    {
+        "408": "Request Timeout",
+        "status" : 408 ,
+        "desc" : "Request Timeout"
+
+    },
+    {
+        "409": "Conflict" ,
+        "status" : 409 ,
+        "desc" : "Conflict"
+
+    },
+    {
+        "410" : "Gone", 
+        "status" : 410 ,
+        "desc" : "Gone"
+    } , 
+    {
+        "411" : "Length Required", 
+        "status" : 411 ,
+        "desc" : "Length Required"
+        
+    } ,
+    {
+        "412" : "Precondition Failed",
+        "status" : 412 ,
+        "desc" : "Precondition Failed"
+
+        } ,
+    {
+        "413" : "Payload Too Large", 
+            
+        "status" : 413 ,
+        "desc" : "Payload Too Large"
+
+    } ,
+    {
+        "414" : "URI Too Long" , 
+        "status" : 414 ,
+        "desc" : "URI Too Long"
+
+        } ,
+    {
+        "415" : "Unsupported Media Type", 
+        
+        "status"  : 415 ,
+        "desc" : "Unsupported Media Type"
+
+        } ,
+    {
+        "416" : "Range Not Satisfiable", 
+        "status" : 416 ,
+        "desc" : "Range Not Satisfiable"
+
+        
+        } ,
+    {
+        "417" : "Expectation Failed",
+        "status" : 417 ,
+        "desc" : "Expectation Failed"
+
+        
+    },
+    {
+        "418" : "I'm a teapot", 
+        "status" : 418, 
+        "desc": "Im a teapot" 
+        
+        
+        } ,
+    {
+        
+        "421" : "Misdirected Request", 
+        "status" : 421 ,
+        "desc" : "Misdirected Request"
+
+        } ,
+    {
+        "422"   : "Unprocessable Entity",
+        "status" : 422 ,
+        "desc" : "Unprocessable Entity"
+
+        
+        } ,
+    {
+        
+        "423"   : "Locked", 
+        "status" : 423 ,
+        "desc" : "Locked"
+
+        
+        
+    },
+    {
+        
+        "424"   : "Failed Dependency",
+        "status" : 424 ,
+        "desc" : "Failed Dependency"
+
+        
+        
+        
+        } ,
+    {
+        
+        "425"   : "Too Early" , 
+        "status" : 425 ,
+        "desc"  : "Too Early"
+        } ,
+    {
+        "426"   : "Upgrade Required", 
+        "status" : 426 , 
+        "desc" : "Upgrade Required"
+
+        
+        } ,
+    {
+        
+        "428"   : "Precondition Required", 
+        "desc": "Precondition Required",
+        } ,
+    {
+        "429"   : "Too Many Requests", 
+        "status" : 429, 
+        "desc" : "Too Many Requests"
+        } ,
+    {
+        
+        "431"   : "Request Header Fields Too Large", 
+        "status"  :431, 
+        "desc" : "Request Header Fields Too Large"
+        
+        } ,
+    {
+        
+        "451"   : "Unavailable For Legal Reasons", 
+        "status" : 451 , 
+        "desc" : "Unavailable For Legal Reasons"
+        
+
+        } ,
+    {
+        "500" : "Internal Server Error",
+        "status" : 500 ,
+        "desc" : "Internal Server Error"
+
+    },
+    {
+        "501" : "Not Implemented" , 
+        "status" : 501 ,
+        "desc" : "Not Implemented"
+
+        
+        } ,
+    {
+        "502" : "Bad Gateway" , 
+        "status" : 502 ,
+        "desc" : "Bad Gateway"
+
+        
+        
+        } ,
+    {
+        
+        "503" : "Service Unavailable" , 
+        "status" : 503 ,
+        "desc" : "Service Unavailable" 
+        } ,
+    {
+        "504" : "Gateway Timeout" , 
+        "status" : 504 ,
+        "desc" : "Gateway Timeout"
+
+        } ,
+    {
+        "505" : "HTTP Version Not Supported", 
+        "status" : 505 ,
+        "desc" : "HTTP Version Not Supported"
+
+        
+    },
+    {
+        "506" : "Variant Also Negotiates", 
+        "status" : 506 ,
+        "desc" : "Variant Also Negotiates"
+
+    },
+    {
+        "507" : "Insufficient Storage", 
+        "status" : 507 ,
+        "desc" : "Insufficient Storage"
+
+    },
+    {
+        "508" : "Loop Detected", 
+        "status" : 508 ,
+        "desc" : "Loop Detected"
+
+        } ,
+    {
+        "510" : "Not Extended", 
+            
+        "status" : 510 ,
+        "desc" : "Not Extended"
+        
+    },
+    {
+        "511" : "Network Authentication Required", 
+        "status" : 511 ,
+        "desc" : "Network Authentication Required"
+    }
 
 
     
