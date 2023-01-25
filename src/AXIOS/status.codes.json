@@ -4,28 +4,129 @@
         "status" : 100 , 
         "desc" : "Continue"
     },
-    {"101": "Switching Protocols"},
-    {"102": "Processing"},
-    {"103" : "Early Hints"},
-    {"200" : "OK"},
-    {"201" : "Created"},
-    {"202" : "Accepted"},
-    {"203" : "Non-Authoritative Information"},
-    {"204" : "No Content"},
-    {"205" : "Reset Content"},
-    {"206" : "Partial Content"},
-    {"207" : "Multi-Status"},
-    {"208" : "Already Reported"},
-    {"226" : "IM Used"},
-    {"300" : "Multiple Choices"},
-    {"301" : "Moved Permanently"},
-    {"302" : "Found"},
-    {"303" : "See Other"},
-    {"304" : "Not Modified"},
-    {"305" : "Use Proxy"}, 
-    {"306" : "Switch"},
-    {"307" : "Temporary Redirect"},
-    {"308" : "Permanent Redirect"},
+    {
+        "101": "Switching Protocols",
+        "status" : 101, 
+        "desc" : "Switching Protocols"
+    },
+    {
+        "102": "Processing" , 
+        "status":"Processing"
+    },
+    {
+        "103" : "Early Hints", 
+        "satus" : 103 , 
+        "desc" : "Early Hints"
+    },
+    {
+        "200" : "OK", 
+        "status" : 200 , 
+        "desc"  : "OK"
+    },
+    {
+        "201" : "Created", 
+        "status" : 201 ,
+        "desc" : "Created"
+    },
+    {
+        "202" : "Accepted" , 
+        "status" : 202 , 
+        "desc" :"Early Hints"
+
+    },
+    {
+        "203" : "Non-Authoritative Information",
+        "status" : 203 ,
+
+        "desc" : "Non-Authoritative Information"
+
+    },
+    {
+        "204" : "No Content" , 
+        "status" : 204 ,
+        "desc" : "No Content"
+    },
+    {
+        "205" : "Reset Content" , 
+        "status" : 205 ,
+        "desc" : "Reset Content"
+
+    },
+    {
+        "206" : "Partial Content", 
+        "status" : 206 ,
+        "desc" : "Partial Content"
+
+    
+    },
+    {
+        "207" : "Multi-Status", 
+        "status" : 207 ,
+        "desc" : "Multi-Status"
+
+    },
+    {
+        "208" : "Already Reported", 
+        "status" : 208 ,
+        "desc" : "Already Reported"
+
+    },
+    {
+        "226" : "IM Used" , 
+        "status" : 226 ,
+        "desc" : "IM Used"
+
+    },
+    {
+        "300" : "Multiple Choices" , 
+        "status" : 300 , 
+        "desc" : "Multiple Choices"
+        
+    },
+    {
+        "301" : "Moved Permanently",
+        "status"  :301, 
+        "desc" : "Moved Permanently"
+
+    },
+    {
+        "302" : "Found",
+        "status" : 302 ,
+        "desc" : "Found"
+
+    },
+    {
+        "303" : "See Other", 
+        "status" : 303 ,
+        "desc" : "See Other"
+
+    },
+    {
+        "304" : "Not Modified", 
+        "status" : 304 ,
+        "desc" : "Not Modified"
+
+    },
+    {
+        "305" : "Use Proxy" , 
+        "status" : 305 ,
+        "desc" : "Use Proxy"
+
+    }, 
+    {
+        "306" : "Switch", 
+        "status" : 306 , 
+        "desc"  : "Switch"
+    },
+    {
+        "307" : "Temporary Redirect",
+        "status" : 307 ,
+        "desc" : "Temporary Redirect"
+    },
+    {
+        "308" : "Permanent Redirect"
+        
+    },
     {"400": "Bad Request"},
     {"401": "Unauthorized"},
     {"402": "Payment Required"},
