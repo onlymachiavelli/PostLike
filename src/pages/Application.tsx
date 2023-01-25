@@ -15,6 +15,15 @@ import Stat from "./../AXIOS/status.codes.json"
 console.log("test", Stat)
 
 import { toast, Toaster } from "react-hot-toast"
+
+const find = (Arr: any, st: String) => {
+  for (let i = 0; i < Arr.length; i++) {
+    if (Arr[i].status === st) {
+      return Arr[i].description
+    }
+  }
+}
+
 const Application = ({ ...props }) => {
   const { fields, addField, Clear } = Fields()
   const { target, Response, setTarget, setRes } = ReqUrl()
@@ -109,7 +118,11 @@ const Application = ({ ...props }) => {
                 STATUS :&nbsp;
                 <b className="text-green">
                   <p>{Status}</p>
-                  <p>{Stat}</p>
+                  <p>
+                    {
+                      //find elemennts
+                    }
+                  </p>
                 </b>
               </p>
             </div>
