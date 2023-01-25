@@ -10,6 +10,10 @@ import Format from "../AXIOS/color.format"
 import publicGet from "../AXIOS/axios.get"
 import PopUp from "../components/popup"
 import parse from "html-react-parser"
+import Stat from "./../AXIOS/status.codes.json"
+
+console.log("test", Stat)
+
 import { toast, Toaster } from "react-hot-toast"
 const Application = ({ ...props }) => {
   const { fields, addField, Clear } = Fields()
@@ -104,8 +108,8 @@ const Application = ({ ...props }) => {
               <p className="text-pink text-sm pt-0.5 flex">
                 STATUS :&nbsp;
                 <b className="text-green">
-                  {" "}
-                  {Status} ({statusDesc})
+                  <p>{Status}</p>
+                  <p>{Stat}</p>
                 </b>
               </p>
             </div>

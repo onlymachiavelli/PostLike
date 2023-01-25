@@ -21,6 +21,7 @@ const publicGet = () => {
         console.log(res.data)
         setStatus(res.status)
         setDes(res.statusText)
+        console.log(res)
       })
       .catch((err) => {
         console.log(err)
