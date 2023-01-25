@@ -293,9 +293,14 @@
         } ,
     {
         
+        
         "428"   : "Precondition Required", 
-        "desc": "Precondition Required",
-        } ,
+        "status" : 428 ,
+
+        "desc": "Precondition Required"
+        
+        
+    },
     {
         "429"   : "Too Many Requests", 
         "status" : 429, 
