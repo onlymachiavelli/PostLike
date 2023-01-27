@@ -117,11 +117,8 @@ const Application = ({ ...props }) => {
               <p className="text-pink text-sm pt-0.5 flex">
                 STATUS :&nbsp;
                 <b className="text-green">
-                  <p>{Status}</p>
                   <p>
-                    {
-                      //find elemennts
-                    }
+                    {Status} ({statusDesc})
                   </p>
                 </b>
               </p>
