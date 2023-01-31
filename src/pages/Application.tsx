@@ -28,7 +28,7 @@ const find = (Arr: any, st: String) => {
   }
 }
 
-const Application = async ({ ...props }) => {
+const Application = ({ ...props }) => {
   const { fields, addField, Clear } = Fields()
   const { target, Response, setTarget, setRes } = ReqUrl()
   const { clr, setColor, colorFormat } = Format()
@@ -39,10 +39,11 @@ const Application = async ({ ...props }) => {
   const [statusDesc, setDes] = useState(String)
 
   //get the data !
-  const localData = await getData("requestAPI")
-  if (localData) {
-    setTarget(localData)
-  }
+  useEffect(() => {
+    getData(setTarget).then((res) => {
+      console.log("res", res)
+    })
+  }, [])
 
   return (
     <div className="w-full h-screen overflow-hidden">
