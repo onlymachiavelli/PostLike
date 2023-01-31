@@ -11,34 +11,22 @@ import publicGet from "../AXIOS/axios.get"
 import PopUp from "../components/popup"
 import parse from "html-react-parser"
 import Stat from "./../AXIOS/status.codes.json"
-
-//the url value : requestAPI
-
+import useDynDatas from "./../AXIOS/dyn.req.datas"
 import { getData, ClearData, PostData } from "./../localStorage/local.funcs"
 
-console.log("test", Stat)
-
 import { toast, Toaster } from "react-hot-toast"
-
-const find = (Arr: any, st: String) => {
-  for (let i = 0; i < Arr.length; i++) {
-    if (Arr[i].status === st) {
-      return Arr[i].description
-    }
-  }
-}
 
 const Application = ({ ...props }) => {
   const { fields, addField, Clear } = Fields()
   const { target, Response, setTarget, setRes } = ReqUrl()
   const { clr, setColor, colorFormat } = Format()
   const { sendReq } = publicGet()
+  const { dynDatas, loading, addDynDatas } = useDynDatas()
   const [Visibility, setVisibility] = useState("invisible")
   const [Method, setMethod] = useState(String)
   const [Status, setStatus] = useState(String)
   const [statusDesc, setDes] = useState(String)
 
-  //get the data !
   useEffect(() => {
     getData("requestAPI").then((res) => {
       console.log("res", res)
@@ -65,8 +53,6 @@ const Application = ({ ...props }) => {
               setTarget(e.target.value)
             }}
             onSend={() => {
-              //local storage
-
               PostData("requestAPI", target)
               PostData("method", Method)
               if (Method.length === 0) {
@@ -129,6 +115,8 @@ const Application = ({ ...props }) => {
             className="w-auto h-auto bg-pink rounded-full px-2 py-2 block  m-auto mt-4 shadow-sm"
             onClick={() => {
               addField()
+              // adding data
+              addDynDatas()
             }}
           >
             <Plus Width="15" Height="15" />
