@@ -12,6 +12,10 @@ import PopUp from "../components/popup"
 import parse from "html-react-parser"
 import Stat from "./../AXIOS/status.codes.json"
 
+//the url value : requestAPI
+
+import { getData, ClearData, PostData } from "./../localStorage/local.funcs"
+
 console.log("test", Stat)
 
 import { toast, Toaster } from "react-hot-toast"
@@ -24,7 +28,7 @@ const find = (Arr: any, st: String) => {
   }
 }
 
-const Application = ({ ...props }) => {
+const Application = async ({ ...props }) => {
   const { fields, addField, Clear } = Fields()
   const { target, Response, setTarget, setRes } = ReqUrl()
   const { clr, setColor, colorFormat } = Format()
@@ -33,6 +37,12 @@ const Application = ({ ...props }) => {
   const [Method, setMethod] = useState(String)
   const [Status, setStatus] = useState(String)
   const [statusDesc, setDes] = useState(String)
+
+  //get the data !
+  const localData = await getData("requestAPI")
+  if (localData) {
+    setTarget(localData)
+  }
 
   return (
     <div className="w-full h-screen overflow-hidden">
