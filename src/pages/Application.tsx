@@ -40,8 +40,17 @@ const Application = ({ ...props }) => {
 
   //get the data !
   useEffect(() => {
-    getData(setTarget).then((res) => {
+    getData("requestAPI").then((res) => {
       console.log("res", res)
+      setTarget(res)
+    })
+
+    getData("method").then((res: any) => {
+      console.log("res", res)
+
+      if (res) {
+        setMethod(res)
+      }
     })
   }, [])
 
@@ -56,6 +65,10 @@ const Application = ({ ...props }) => {
               setTarget(e.target.value)
             }}
             onSend={() => {
+              //local storage
+
+              PostData("requestAPI", target)
+              PostData("method", Method)
               if (Method.length === 0) {
                 toast.error("Please select a method")
               } else if (target.length === 0) {
