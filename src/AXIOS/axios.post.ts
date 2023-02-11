@@ -26,5 +26,5 @@ const sendReq = (dyn_container: any,
         dyn_container(err)
       })
     }
-    return {}
+    return {sendReq}
 }

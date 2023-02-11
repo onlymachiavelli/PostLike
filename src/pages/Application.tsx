@@ -26,6 +26,8 @@ const Application = ({ ...props }) => {
   const [Method, setMethod] = useState(String)
   const [Status, setStatus] = useState(String)
   const [statusDesc, setDes] = useState(String)
+  //think about it 
+  const [qHeaders, setQ] = useState({})
 
   useEffect(() => {
     getData("requestAPI").then((res) => {
@@ -60,7 +62,7 @@ const Application = ({ ...props }) => {
               } else if (target.length === 0) {
                 toast.error("Please enter a valid url")
               } else {
-                sendReq(setRes, target, Method, setStatus, setDes)
+                sendReq(setRes,qHeaders, target, Method, setStatus, setDes)
                 if (Response) colorFormat(Response)
                 toast.success(
                   "Request Sent, if the box is empty please click again"

@@ -7,6 +7,7 @@ import find from "../utils/find"
 const publicGet = () => {
   const sendReq = (
     dyn_container: any,
+    query: any , 
     target: any,
     method: any,
     setStatus: any,
@@ -15,6 +16,8 @@ const publicGet = () => {
     axios
       .get(target, {
         headers: {},
+        params : query,
+        
         method: method,
         //withCredentials: true,
       })
