@@ -1,6 +1,7 @@
 import axios from 'axios'
 import jsonFormat from './string.format'
-import { find } from 'domutils'
+import find from './../utils/find'
+import Stat from './status.codes.json'
 const usePublicPost = () =>{
 
 const sendReq = (dyn_container: any,
@@ -17,7 +18,7 @@ const sendReq = (dyn_container: any,
         dyn_container(jsonFormat(JSON.stringify(res.data)))
         console.log(res.data)
         setStatus(res.status)
-        setDes(res.statusText ? res.statusText : find(Stat, res.status))
+        setDes(res.statusText ? res.statusText :find(Stat, res.status))
         console.log(res)
       })
       .catch((err) => {

@@ -3,16 +3,7 @@ import axios from "axios"
 import Stat from "./../AXIOS/status.codes.json"
 import jsonFormat from "./string.format"
 
-const find = (arr: any, target: any) => {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].status == target) {
-      return arr[i].desc
-    }
-  }
-
-  return "unckown"
-}
-
+import find from "../utils/find"
 const publicGet = () => {
   const sendReq = (
     dyn_container: any,
