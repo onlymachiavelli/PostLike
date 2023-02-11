@@ -6,11 +6,13 @@ const usePublicPost = () =>{
 
 const sendReq = (dyn_container: any,
     target: any,
+    body  : any , 
     method: any,
     setStatus: any,
     setDes: any) =>{
     axios.post(target, {
         headers: {},
+        body : body,
         method: method,
         //withCredentials: true,
       })
