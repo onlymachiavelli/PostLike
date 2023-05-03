@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react"
 
 const useDynDatas = () => {
-  const [dynDatas, setDynDatas] = useState([])
+  const [dynDatas, setDynDatas] = useState([
+    { id: 1, key: "key1", value: "value1" },
+  ])
 
   /*
   
@@ -17,7 +19,19 @@ const useDynDatas = () => {
 
   useEffect(() => {}, [])
   const addDynDatas = () => {
-    setDynDatas([...dynDatas])
+    setDynDatas(
+    
+
+
+      [
+        ...dynDatas,
+        {
+          id: dynDatas.length + 1,
+          key: "key" + (dynDatas.length + 1),
+          value: "value" + (dynDatas.length + 1),
+        },
+      ]
+    )
     setLoading(false)
   }
   return { dynDatas, loading, addDynDatas }

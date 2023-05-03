@@ -27,7 +27,9 @@ const Application = ({ ...props }) => {
   const [Status, setStatus] = useState(String)
   const [statusDesc, setDes] = useState(String)
   //think about it 
-  const [qHeaders, setQ] = useState({})
+  const [qHeaders, setQ] = useState([
+    
+  ])
 
   useEffect(() => {
     getData("requestAPI").then((res) => {

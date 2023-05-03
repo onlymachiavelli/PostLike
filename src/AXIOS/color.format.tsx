@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react"
 
 const Format = () => {
   const [clr, setColor]: any = useState("")
-  let color: any = ""
-  const colorFormat = (myString: any) => {
+  let color: string = ""
+  const colorFormat = (myString: string) => {
     for (let i = 0; i < myString.length; i++) {
       let begin = true
       if (
@@ -12,10 +12,8 @@ const Format = () => {
         myString[i] === "}" ||
         myString[i] === "]"
       ) {
-        //setColor([...clr, <p className="text-pink">{myString[i]}</p>])
         color += `<p className="text-pink">${myString[i]}</p>`
       } else if (myString[i] === ",") {
-        //setColor([...clr, <p className="text-white">{myString[i]}</p>])
         color += `<b className="text-pink">${myString[i]}</b><br/>`
       } else if (myString[i] == `"` || myString[i] == `'`) {
         let str: any = myString[i]
@@ -24,9 +22,7 @@ const Format = () => {
             if (myString[j - 1] == ":") begin = false
 
             str += myString[j]
-            //setColor([...clr, <p className="text-brown">{str}</p>])
-            color += `<b className="text-${() =>
-              begin ? "grn" : "brown"}">${str}</b>`
+            color += `<b className="text-${begin ? "grn" : "brown"}">${str}</b>`
 
             i = j
             break
@@ -39,7 +35,6 @@ const Format = () => {
         for (let j = i + 1; j < myString.length; j++) {
           if (myString[j] === ",") {
             st += myString[j]
-            //setColor([...clr, <p className="text-brown">{str}</p>])
             color += `<b className="text-red">${st}</b> <br/>`
 
             i = j
@@ -49,14 +44,11 @@ const Format = () => {
           }
         }
       } else {
-        //setColor([...clr, <p className="text-white">{myString[i]}</p>])
         color += `<b className="text-white">${myString[i]}</b>`
       }
-
-      //else if ()
-
-      setColor(color)
     }
+    setColor(color)
+    return color
   }
   return { clr, setColor, colorFormat, color }
 }
